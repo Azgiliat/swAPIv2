@@ -19,12 +19,26 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.[^.]+$/,
+        loader: 'url-loader',
+        include: [
+          path.resolve(__dirname, 'src/static')
+        ],
+        options: {
+          limit: 1000,
+          esModule: false,
+          publicPath: 'static',
+          outputPath: '/static'
+        }
       }
     ]
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src')
+      '@': path.join(__dirname, 'src'),
+      '#': path.join(__dirname, 'src/static')
     }
   },
   output: {

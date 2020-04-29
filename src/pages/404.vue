@@ -1,6 +1,7 @@
 <template>
   <div class="">
     404
+    <img src="./../static/webpack.svg" />
   </div>
 </template>
 
