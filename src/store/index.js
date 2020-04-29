@@ -4,15 +4,21 @@ import state from './state';
 import * as mutations from './mutations';
 import * as actions from './actions';
 import * as getters from './getters';
+import Axios from 'axios';
+import conf from './../../conf.json';
 
 Vue.use(Vuex);
 
-export default function createStore () {
-  return new Vuex.Store({
-    modules: {},
-    state,
-    mutations,
-    actions,
-    getters
-  });
-}
+const store = new Vuex.Store({
+  modules: {},
+  state,
+  mutations,
+  actions,
+  getters
+});
+
+store.$axios = Axios.create({
+  baseURL: conf.baseURL
+});
+
+export default store

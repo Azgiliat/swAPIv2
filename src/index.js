@@ -6,7 +6,7 @@ import createStore from '@/store/index.js';
 
 new Vue({
   el: '#app',
-  store: createStore(),
-  router: createRouter(),
+  store: createStore,
+  router: createRouter,
   render: h => h(App),
 });

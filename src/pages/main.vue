@@ -6,12 +6,16 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex';
   export default {
     name: "main",
-    computed: {
-      pic() {
-        return require('#/webpack.svg');
-      }
+    methods: {
+      ...mapActions({
+        tmp: 'tmp'
+      })
+    },
+    mounted() {
+      this.tmp()
     }
   }
 </script>
