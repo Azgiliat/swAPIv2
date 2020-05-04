@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const path = require('path');
 
 module.exports = merge(common,{
   mode: 'development',
@@ -11,15 +12,25 @@ module.exports = merge(common,{
         use: [
           'vue-style-loader',
           'css-loader',
-          'sass-loader'
+          'resolve-url-loader',
+          'sass-loader',
+          {
+            loader: 'style-resources-loader',
+            options: {
+              patterns: [
+                './src/assets/css/*.scss',
+                './src/assets/css/*.css'
+              ]
+            }
+          }
         ]
       }
     ]
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
-    open: true,
+    contentBase: path.resolve(__dirname, 'src/static'),
+    open: false,
     hot: true,
     watchContentBase: true,
     historyApiFallback: true

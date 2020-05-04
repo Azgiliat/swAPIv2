@@ -5,6 +5,7 @@ const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 const path = require(`path`);
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -29,16 +30,58 @@ module.exports = {
         options: {
           limit: 1000,
           esModule: false,
-          publicPath: 'static',
-          outputPath: '/static'
+          // publicPath: 'static',
+          // outputPath: './static',
+          name: '[path][name].[ext]'
         }
+      },
+      {
+        test: /\.svg$/,
+        include: [
+          path.resolve(__dirname, 'src/assets/icons')
+        ],
+        use: [
+          'svg-sprite-loader',
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [
+                {
+                  cleanupIDs: {
+                    minify: false
+                  }
+                },
+                {
+                  removeViewBox: false
+                },
+                {
+                  removeAttributesBySelector: {
+                    selectors: [
+                      {
+                        selector: ["svg"],
+                        attributes: ['width', 'height']
+                      },
+                      {
+                        selector: ["svg:not(.goodFill) *"],
+                        attributes: ['fill']
+                      },
+                      {
+                        selector: ["svg:not(.goodFill)"],
+                        attributes: ['fill']
+                      }
+                    ]
+                  }
+                }]
+            }
+          }
+        ]
       }
     ]
   },
   resolve: {
     alias: {
       '@': path.join(__dirname, 'src'),
-      '#': path.join(__dirname, 'src/static')
+      'st': path.join(__dirname, 'src/static')
     }
   },
   output: {
@@ -49,6 +92,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new FaviconsWebpackPlugin(path.resolve(__dirname, 'src/static/r2-d2-fav.png')),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({

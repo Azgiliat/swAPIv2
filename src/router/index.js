@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Main from "@/pages/main.vue";
+import Main from "@/pages/Content.vue";
 import Error from "@/pages/404.vue";
 
 Vue.use(Router);

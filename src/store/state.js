@@ -1,5 +1,8 @@
 export default function () {
   return {
-    test: 'test'
+    allPages: [],
+    currentPage: null,
+    loadingStatus: true,
+    error: false
   }
 }
