@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import {mapGetters} from 'vuex';
   import Search from "../Search.vue";
   import CardsList from "../CardsList.vue";
 
@@ -18,10 +18,11 @@
     },
     computed: {
       ...mapGetters({
-        allPages: 'getAllPages',
+        allPages: 'getAllPages'
       }),
       ...mapGetters('search', {
         isSearching: 'isSearching',
+        searchResult: 'getResult'
       }),
       cardsForDisplay() {
         let cards = [];
