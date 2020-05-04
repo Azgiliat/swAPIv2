@@ -117,7 +117,7 @@
 
   &--error {
     margin: 0;
-    background-color: #000;
+    background-color: $black;
     flex-grow: 2;
   }
 

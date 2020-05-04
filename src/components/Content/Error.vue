@@ -30,7 +30,7 @@
     top: 35%;
     left: 12%;
 
-    color: #fff;
+    color: $white;
     font-size: 16px;
     line-height: 20px;
     margin: 0;

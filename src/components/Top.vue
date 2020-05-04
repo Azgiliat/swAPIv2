@@ -37,7 +37,7 @@
 
   &__text {
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
     text-align: center;
     margin: 8px 0;
 

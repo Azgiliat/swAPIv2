@@ -167,7 +167,7 @@
   }
 
   &--error {
-    background-color: #000;
+    background-color: $black;
     @media(min-width: $desktop-width) {
       padding: 0;
     }
@@ -189,7 +189,7 @@
     }
 
     &__text {
-      color: #fff;
+      color: $white;
       font-size: 16px;
       line-height: 20px;
       font-weight: 500;
@@ -229,7 +229,7 @@
       position: absolute;
       height: 2px;
       width: 100%;
-      background-color: #fff;
+      background-color: $white;
       top: 6px;
       left: 0;
     }
@@ -260,14 +260,14 @@
     font-size: 22px;
     line-height: 26px;
     margin: 0 0 0 15px;
-    color: #fff;
+    color: $white;
   }
 
   &__letter {
     font-weight: 500;
     font-size: 48px;
     line-height: 56px;
-    color: #fff;
+    color: $white;
   }
 
   &__separator {
@@ -349,7 +349,7 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: #fff;
+    color: $white;
     margin: 0;
   }
 

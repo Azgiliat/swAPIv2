@@ -93,14 +93,14 @@
     font-size: 48px;
     line-height: 56px;
     text-align: center;
-    color: #fff;
+    color: $white;
     margin: 0 auto;
   }
 
   &__name {
     margin: 0 0 10px;
     text-align: center;
-    color: #fff;
+    color: $white;
     font-weight: bold;
     font-size: 18px;
     line-height: 21px;

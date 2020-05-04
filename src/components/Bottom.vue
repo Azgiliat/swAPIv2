@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  background-color: #000;
+  background-color: $black;
   padding: 36px 0;
   margin-top: auto;
 
@@ -18,7 +18,7 @@
     width: 70%;
     margin: 0 auto;
     text-transform: uppercase;
-    color: #fff;
+    color: $white;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;

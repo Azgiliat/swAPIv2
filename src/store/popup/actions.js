@@ -16,6 +16,7 @@ export function loadData({state, commit}) {
     if (!(typeof film === 'object' && !!film.title)) {
       loadings.push(this.$axios.get(`${getUrl(film)}`)
         .then(response => {
+          //throw new Error('test err'); //test error
           commit('setFilmTitle', {
             id: index,
             title: response.data.title

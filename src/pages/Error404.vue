@@ -18,7 +18,7 @@
   width: 100%;
   position: relative;
   flex-grow: 1;
-  background-color: #000;
+  background-color: $black;
   display: flex;
   align-items: center;
 
@@ -31,7 +31,7 @@
   }
 
   &__text {
-    color: #fff;
+    color: $white;
     margin: 0;
     font-size: 50px;
     line-height: 50px;
