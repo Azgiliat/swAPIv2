@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Main from "@/pages/Content.vue";
-import Error from "@/pages/404.vue";
+import Error from "@/pages/Error404.vue";
 
 Vue.use(Router);
 
@@ -18,6 +18,6 @@ const routes = [
 ];
 
 export default new Router({
-    mode: 'history',
+    //mode: 'history',
     routes
 })

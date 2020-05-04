@@ -5,7 +5,6 @@ const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 const path = require(`path`);
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -30,9 +29,9 @@ module.exports = {
         options: {
           limit: 1000,
           esModule: false,
-          // publicPath: 'static',
-          // outputPath: './static',
-          name: '[path][name].[ext]'
+          publicPath: 'static',
+          outputPath: './static',
+          //name: '[path][name].[ext]'
         }
       },
       {
@@ -91,8 +90,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './src/static/r2-d2-fav.png'
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, 'src/static/r2-d2-fav.png')),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
